@@ -1,4 +1,6 @@
 var App = (function () {
+  var lastMinute = -1;
+
   function renderClock() {
     var el = document.getElementById('clock');
     var now = new Date();
@@ -101,15 +103,27 @@ var App = (function () {
     empty.style.display = rows.length === 0 ? 'block' : 'none';
   }
 
-  function tick() {
+  function tickClock() {
     renderClock();
-    renderTimeline();
-    renderTable();
+  }
+
+  function tickSlot() {
+    var now = new Date();
+    var minute = now.getHours() * 60 + now.getMinutes();
+    if (minute !== lastMinute) {
+      lastMinute = minute;
+      renderTimeline();
+      renderTable();
+    }
   }
 
   function init() {
-    tick();
-    setInterval(tick, 10000);
+    renderClock();
+    renderTimeline();
+    renderTable();
+    lastMinute = new Date().getHours() * 60 + new Date().getMinutes();
+    setInterval(tickClock, 1000);
+    setInterval(tickSlot, 1000);
   }
 
   return { init: init };

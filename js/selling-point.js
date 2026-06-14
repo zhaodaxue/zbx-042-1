@@ -1,5 +1,22 @@
 var SellingPoint = (function () {
+  var currentOverlay = null;
+
+  function close() {
+    if (!currentOverlay) return;
+    document.body.removeChild(currentOverlay);
+    currentOverlay = null;
+    document.removeEventListener('keydown', onKeyDown);
+  }
+
+  function onKeyDown(e) {
+    if (e.key === 'Escape' || e.keyCode === 27) {
+      close();
+    }
+  }
+
   function show(carId, modelName) {
+    if (currentOverlay) return;
+
     var points = SELLING_POINTS[carId];
     if (!points) return;
 
@@ -26,21 +43,22 @@ var SellingPoint = (function () {
     var closeBtn = document.createElement('button');
     closeBtn.className = 'sp-close';
     closeBtn.textContent = '关闭';
-    closeBtn.onclick = function () {
-      document.body.removeChild(overlay);
-    };
+    closeBtn.onclick = close;
     modal.appendChild(closeBtn);
 
     overlay.appendChild(modal);
     overlay.onclick = function (e) {
       if (e.target === overlay) {
-        document.body.removeChild(overlay);
+        close();
       }
     };
     document.body.appendChild(overlay);
+    currentOverlay = overlay;
+    document.addEventListener('keydown', onKeyDown);
   }
 
   return {
-    show: show
+    show: show,
+    close: close
   };
 })();
