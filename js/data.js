@@ -22,6 +22,7 @@ var CAR_DATA = [
       { start: '10:00', end: '11:00', presenter: '刘洋' },
       { start: '11:00', end: '12:00', presenter: '张薇' },
       { start: '13:00', end: '14:00', presenter: '陈静' },
+      { start: '13:30', end: '14:30', presenter: '李明' },
       { start: '14:00', end: '15:00', presenter: '刘洋' },
       { start: '15:00', end: '16:00', presenter: '张薇' },
       { start: '16:00', end: '17:00', presenter: '陈静' }

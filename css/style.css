@@ -294,3 +294,148 @@ tbody tr:hover {
 .sp-close:hover {
   opacity: 0.85;
 }
+
+.view-switch {
+  display: flex;
+  gap: 8px;
+  padding: 14px 16px;
+  background: #1a2035;
+  border-bottom: 1px solid #1e2538;
+}
+
+.vs-btn {
+  padding: 7px 18px;
+  background: #1c2235;
+  border: 1px solid #2a3550;
+  border-radius: 6px;
+  color: #7b8fb2;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 1px;
+}
+
+.vs-btn:hover {
+  border-color: #4fc3f7;
+  color: #a0aec0;
+}
+
+.vs-btn.vs-active {
+  background: linear-gradient(135deg, #1565c0, #0d47a1);
+  border-color: #4fc3f7;
+  color: #e3f2fd;
+  font-weight: 600;
+}
+
+.row-conflict {
+  background: linear-gradient(90deg, rgba(198, 40, 40, 0.25), rgba(198, 40, 40, 0.1)) !important;
+}
+
+.row-conflict td:first-child {
+  border-left: 3px solid #ef5350 !important;
+}
+
+.badge-conflict {
+  display: inline-block;
+  background: linear-gradient(135deg, #ef5350, #e53935);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 10px;
+  letter-spacing: 1px;
+  margin-right: 6px;
+}
+
+.badge-upcoming {
+  display: inline-block;
+  background: linear-gradient(135deg, #fdd835, #fbc02d);
+  color: #0b0e17;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 10px;
+  letter-spacing: 1px;
+  margin-right: 6px;
+}
+
+.group-row td {
+  padding: 0;
+  border-bottom: none;
+}
+
+.group-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #1c2235;
+  border-left: 3px solid #2a3550;
+}
+
+.group-header.conflict {
+  background: #3a1f1f;
+  border-left-color: #ef5350;
+}
+
+.group-header.current {
+  background: linear-gradient(90deg, rgba(13, 71, 161, 0.25), rgba(21, 101, 192, 0.1));
+  border-left-color: #4fc3f7;
+}
+
+.group-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.group-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #e8ecf1;
+}
+
+.group-count {
+  font-size: 12px;
+  color: #7b8fb2;
+  background: #141824;
+  padding: 3px 10px;
+  border-radius: 10px;
+  border: 1px solid #2a3550;
+}
+
+.group-count.conflict-badge {
+  color: #ef5350;
+  border-color: #ef5350;
+  background: rgba(239, 83, 80, 0.1);
+}
+
+.group-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.upcoming-hint {
+  font-size: 13px;
+  color: #fdd835;
+  font-weight: 600;
+  padding: 4px 12px;
+  background: rgba(253, 216, 53, 0.1);
+  border-radius: 12px;
+  border: 1px solid rgba(253, 216, 53, 0.3);
+}
+
+.group-current-tag {
+  font-size: 13px;
+  color: #4fc3f7;
+  font-weight: 600;
+  padding: 4px 12px;
+  background: rgba(79, 195, 247, 0.1);
+  border-radius: 12px;
+  border: 1px solid rgba(79, 195, 247, 0.3);
+}
+
+.status-cell {
+  min-width: 160px;
+}
