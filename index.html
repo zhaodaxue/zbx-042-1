@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>展车讲解轮换表</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>展车讲解轮换表</h1>
+      <div id="clock">--:--:--</div>
+    </div>
+
+    <div class="timeline-wrap">
+      <div class="timeline-label">今日时段</div>
+      <div id="timeline"></div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>车型</th>
+            <th>展位</th>
+            <th>讲解时段</th>
+            <th>讲解员</th>
+            <th>状态</th>
+          </tr>
+        </thead>
+        <tbody id="car-tbody"></tbody>
+      </table>
+      <div id="empty-hint">当前筛选时段暂无展车安排</div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/time-slot.js"></script>
+  <script src="js/list-filter.js"></script>
+  <script src="js/selling-point.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
